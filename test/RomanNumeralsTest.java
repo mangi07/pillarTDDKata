@@ -1,4 +1,5 @@
 import com.ben.RomanNumerals;
+import junit.framework.Assert;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
@@ -13,4 +14,11 @@ public class RomanNumeralsTest {
         RomanNumerals romanNumerals = new RomanNumerals();
         assertEquals("I", romanNumerals.arabicToRoman(1));
     }
+
+    @Test
+    public void whenArabicToRomanIsPassedATwoItReturnsII() {
+        RomanNumerals romanNumerals = new RomanNumerals();
+        assertEquals("II", romanNumerals.arabicToRoman(2));
+    }
+
 }
