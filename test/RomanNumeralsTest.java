@@ -1,5 +1,6 @@
 import com.ben.RomanNumerals;
 import junit.framework.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
@@ -9,23 +10,26 @@ import static junit.framework.TestCase.assertEquals;
  */
 public class RomanNumeralsTest {
 
+    RomanNumerals romanNumerals;
+
+    @Before
+    public void setUp() {
+        romanNumerals = new RomanNumerals();
+    }
+
     @Test
     public void whenRomanNumeralsIsPassedAOneItReturnsI() {
-        RomanNumerals romanNumerals = new RomanNumerals();
         assertEquals("I", romanNumerals.arabicToRoman(1));
     }
 
     @Test
     public void whenArabicToRomanIsPassedATwoItReturnsII() {
-        RomanNumerals romanNumerals = new RomanNumerals();
         assertEquals("II", romanNumerals.arabicToRoman(2));
     }
 
     @Test
     public void whenArabicToRomanIsPassedAThreeItReturnsIII() {
-        RomanNumerals romanNumerals = new RomanNumerals();
         assertEquals("III", romanNumerals.arabicToRoman(3));
     }
-
 
 }
