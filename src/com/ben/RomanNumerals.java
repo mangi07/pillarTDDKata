@@ -6,7 +6,7 @@ package com.ben;
 public class RomanNumerals {
     public String arabicToRoman(Integer arabicNumber) {
         StringBuilder romanNumber = new StringBuilder();
-        if (arabicNumber < 3) {
+        if (arabicNumber < 4) {
             for (int i = 0; i < arabicNumber; ++i) {
                 romanNumber.append("I");
             }

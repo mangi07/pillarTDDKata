@@ -21,4 +21,11 @@ public class RomanNumeralsTest {
         assertEquals("II", romanNumerals.arabicToRoman(2));
     }
 
+    @Test
+    public void whenArabicToRomanIsPassedAThreeItReturnsIII() {
+        RomanNumerals romanNumerals = new RomanNumerals();
+        assertEquals("III", romanNumerals.arabicToRoman(3));
+    }
+
+
 }
