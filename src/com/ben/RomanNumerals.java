@@ -22,6 +22,8 @@ public class RomanNumerals {
         int remainder;
         int numerator;
         List<RomanValues> romVals = new ArrayList<>();
+        romVals.add(RomanValues.C);
+        romVals.add(RomanValues.L);
         romVals.add(RomanValues.X);
         romVals.add(RomanValues.V);
         romVals.add(RomanValues.I);
@@ -46,7 +48,7 @@ public class RomanNumerals {
                 if (romanNumber.length() > 0) {
                     romanNumber.deleteCharAt(romanNumber.length() - 1);
                 }
-                romanNumber.append(RomanValues.I.symbol);
+                romanNumber.append(currRom.symbol);
                 int stepBack = (prevRom.baseType == 5) ? 2 : 1;
                 int index = romCount - stepBack;
                 romanNumber.append(romVals.get(index).symbol);

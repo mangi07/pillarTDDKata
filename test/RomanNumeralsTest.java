@@ -45,4 +45,9 @@ public class RomanNumeralsTest {
     public void whenArabicToRomanIsPassedANineItReturnsIX() {
         assertEquals("IX", romanNumerals.arabicToRoman(9));
     }
+
+    @Test
+    public void whenArabicToRomanIsPassedNinetyItReturnsXC() {
+        assertEquals("XC", romanNumerals.arabicToRoman(90));
+    }
 }
