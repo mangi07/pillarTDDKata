@@ -55,4 +55,22 @@ public class RomanNumeralsTest {
     public void whenArabicToRomanIsPassedNinetyFourItReturnsXCIV() {
         assertEquals("XCIV", romanNumerals.arabicToRoman(94));
     }
+
+    @Test
+    public void whenArabicToRomanIsPassedNineHundredFortyItReturnsCMXL() {
+        assertEquals("CMXL", romanNumerals.arabicToRoman(940));
+    }
+
+    @Test
+    public void whenArabicToRomanIsPassedNineHundredFortyNineItReturnsCMXLIX() {
+        assertEquals("CMXLIX", romanNumerals.arabicToRoman(949));
+    }
+
+    @Test
+    public void miscRemainingArabicToRoman() {
+        assertEquals("MMMDCCCLXXXIX", romanNumerals.arabicToRoman(3889));
+        assertEquals("MMMDCCCXC", romanNumerals.arabicToRoman(3890));
+        assertEquals("MMMCMXCIX", romanNumerals.arabicToRoman(3999));
+        assertEquals("CDLV", romanNumerals.arabicToRoman(455));
+    }
 }

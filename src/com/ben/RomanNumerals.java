@@ -10,11 +10,9 @@ import java.util.List;
 public class RomanNumerals {
 
     /* https://dzone.com/articles/tdd-algorithms
-     * ...hmm...implement Greedy algorithm already?
-     * Would Greedy emerge from TDD, or is it okay
-     * to implement the algorithm from the start
-     * as long as the test covers all the Roman Numeral
-     * conversion rules and all the tests pass? */
+     * ...hmm...I guess it was a little of both --
+     * some foreknowledge of how the algorithm should look
+     * but also letting it emerge with TDD.*/
 
     public String arabicToRoman(Integer arabicNumber) {
         StringBuilder romanNumber = new StringBuilder();
@@ -22,6 +20,8 @@ public class RomanNumerals {
         int remainder;
         int numerator;
         List<RomanValues> romVals = new ArrayList<>();
+        romVals.add(RomanValues.M);
+        romVals.add(RomanValues.D);
         romVals.add(RomanValues.C);
         romVals.add(RomanValues.L);
         romVals.add(RomanValues.X);
@@ -59,25 +59,7 @@ public class RomanNumerals {
             }
 
         }
-        /*
-        if (arabicNumber == 9) {
-            romanNumber.append("IX");
-            arabicNumber = arabicNumber - 9;
-        }
-        if (arabicNumber >= 5) {
-            romanNumber.append("V");
-            arabicNumber = arabicNumber - 5;
-        }
-        if (arabicNumber == 4) {
-            romanNumber.append("IV");
-        }
-        if (arabicNumber < 4) {
-            for (int i = 0; i < arabicNumber; ++i) {
-                romanNumber.append("I");
-            }
-        }
-        */
 
-            return romanNumber.toString();
-        }
+        return romanNumber.toString();
     }
+}
