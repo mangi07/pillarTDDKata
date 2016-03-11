@@ -32,4 +32,8 @@ public class RomanNumeralsTest {
         assertEquals("III", romanNumerals.arabicToRoman(3));
     }
 
+    @Test
+    public void whenArabicToRomanIsPassedAFourItReturnsIV() {
+        assertEquals("IV", romanNumerals.arabicToRoman(4));
+    }
 }
