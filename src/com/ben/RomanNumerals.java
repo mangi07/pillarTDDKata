@@ -29,6 +29,7 @@ public class RomanNumerals {
         romVals.add(RomanValues.I);
         int prevRomIndex = 0;
         RomanValues prevRom = romVals.get(prevRomIndex);
+        boolean pending = true;
 
         for (int romCount = 0; romCount < romVals.size(); ++romCount) {
             RomanValues currRom = romVals.get(romCount);
@@ -44,14 +45,17 @@ public class RomanNumerals {
                 }
                 prevRomIndex = romCount;
                 prevRom = romVals.get(prevRomIndex);
+                pending = true;
             } else if (romNumCount == 4) {
-                if (romanNumber.length() > 0) {
+                if (romanNumber.length() > 0 && pending/*prevRom.baseType == 5*/) {
                     romanNumber.deleteCharAt(romanNumber.length() - 1);
                 }
                 romanNumber.append(currRom.symbol);
                 int stepBack = (prevRom.baseType == 5) ? 2 : 1;
                 int index = romCount - stepBack;
-                romanNumber.append(romVals.get(index).symbol);
+                prevRom = romVals.get(index);
+                romanNumber.append(prevRom.symbol);
+                pending = false;
             }
 
         }
