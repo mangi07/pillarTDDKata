@@ -47,7 +47,7 @@ public class RomanNumerals {
                 prevRom = romVals.get(prevRomIndex);
                 pending = true;
             } else if (romNumCount == 4) {
-                if (romanNumber.length() > 0 && pending/*prevRom.baseType == 5*/) {
+                if (romanNumber.length() > 0 && pending) {
                     romanNumber.deleteCharAt(romanNumber.length() - 1);
                 }
                 romanNumber.append(currRom.symbol);
