@@ -17,9 +17,18 @@ public class RomanNumerals {
     public String arabicToRoman(Integer arabicNumber) {
         StringBuilder romanNumber = new StringBuilder();
 
+        if (arabicNumber == 9) {
+            romanNumber.append("IX");
+            arabicNumber = arabicNumber - 9;
+        }
+        if (arabicNumber >= 5) {
+            romanNumber.append("V");
+            arabicNumber = arabicNumber - 5;
+        }
         if (arabicNumber == 4) {
             romanNumber.append("IV");
-        } else if (arabicNumber < 4) {
+        }
+        if (arabicNumber < 4) {
             for (int i = 0; i < arabicNumber; ++i) {
                 romanNumber.append("I");
             }
