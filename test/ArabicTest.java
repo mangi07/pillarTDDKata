@@ -3,7 +3,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.fail;
 
 /**
  * Created by ben on 3/30/2016.
@@ -26,5 +25,11 @@ public class ArabicTest {
     public void whenPassedIIIReturns3() {
         int number = arabic.fromRomanNumeral("III");
         assertEquals(number, 3);
+    }
+
+    @Test
+    public void whenPassedIVReturns4() {
+        int number = arabic.fromRomanNumeral("IV");
+        assertEquals(number, 4);
     }
 }
