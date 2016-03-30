@@ -64,5 +64,32 @@ public class ArabicTest {
         assertEquals(16, number);
     }
 
+    @Test
+    public void whenPassedXCReturns90() {
+        assertEquals(90, arabic.fromRomanNumeral("XC"));
+    }
+
+    @Test
+    public void whenPassedXCIVReturns94() {
+        assertEquals(94, arabic.fromRomanNumeral("XCIV"));
+    }
+
+    @Test
+    public void whenPassedXCIVReturns940() {
+        assertEquals(940, arabic.fromRomanNumeral("CMXL"));
+    }
+
+    @Test
+    public void whenPassedCMXLIXReturns949() {
+        assertEquals(949, arabic.fromRomanNumeral("CMXLIX"));
+    }
+
+    @Test
+    public void miscRemainingArabicToRoman() {
+        assertEquals(3889, arabic.fromRomanNumeral("MMMDCCCLXXXIX"));
+        assertEquals(3890, arabic.fromRomanNumeral("MMMDCCCXC"));
+        assertEquals(3999, arabic.fromRomanNumeral("MMMCMXCIX"));
+        assertEquals(455, arabic.fromRomanNumeral("CDLV"));
+    }
 
 }
