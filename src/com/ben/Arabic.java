@@ -1,6 +1,8 @@
 package com.ben;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,13 +17,24 @@ public class Arabic {
         arabicValues.put('I', 1);
         arabicValues.put('V', 5);
 
-        if (romanNumeral.contains("V")) {
-            return 4;
-        } else {
-            for (int digits = romanNumeral.length(); digits > 0; --digits) {
-                arabic++;
-            }
-            return arabic;
+        List<Integer> values = new ArrayList<>();
+        for (int i = 0; i < romanNumeral.length(); i++) {
+            char c = romanNumeral.charAt(i);
+            values.add(arabicValues.get(c));
         }
+
+        int prev, curr;
+        prev = arabicValues.get(romanNumeral.charAt(0));
+        for (int digit : values) {
+            curr = digit;
+            if (prev >= curr) {
+                arabic += curr;
+            } else if (prev < curr){
+                arabic = arabic - prev + (curr - prev);
+            }
+            prev = curr;
+        }
+
+        return arabic;
     }
 }

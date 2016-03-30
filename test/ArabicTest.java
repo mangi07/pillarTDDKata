@@ -18,18 +18,24 @@ public class ArabicTest {
     @Test
     public void whenPassedIReturns1() {
         int number = arabic.fromRomanNumeral("I");
-        assertEquals(number, 1);
+        assertEquals(1, number);
     }
 
     @Test
     public void whenPassedIIIReturns3() {
         int number = arabic.fromRomanNumeral("III");
-        assertEquals(number, 3);
+        assertEquals(3, number);
     }
 
     @Test
     public void whenPassedIVReturns4() {
         int number = arabic.fromRomanNumeral("IV");
-        assertEquals(number, 4);
+        assertEquals(4, number);
+    }
+
+    @Test
+    public void whenPassedVReturns5() {
+        int number = arabic.fromRomanNumeral("V");
+        assertEquals(5, number);
     }
 }
