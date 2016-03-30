@@ -10,6 +10,7 @@ import static junit.framework.TestCase.assertEquals;
 public class ArabicTest {
 
     Arabic arabic;
+
     @Before
     public void setUp() {
         arabic = new Arabic();
@@ -50,4 +51,18 @@ public class ArabicTest {
         int number = arabic.fromRomanNumeral("IX");
         assertEquals(9, number);
     }
+
+    @Test
+    public void whenPassedXIVReturns14() {
+        int number = arabic.fromRomanNumeral("XIV");
+        assertEquals(14, number);
+    }
+
+    @Test
+    public void whenPassedXVIReturns16() {
+        int number = arabic.fromRomanNumeral("XVI");
+        assertEquals(16, number);
+    }
+
+
 }
