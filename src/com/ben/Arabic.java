@@ -17,6 +17,10 @@ public class Arabic {
         arabicValues.put('I', 1);
         arabicValues.put('V', 5);
         arabicValues.put('X', 10);
+        arabicValues.put('L', 50);
+        arabicValues.put('C', 100);
+        arabicValues.put('D', 500);
+        arabicValues.put('M', 1000);
 
         List<Integer> values = new ArrayList<>();
         for (int i = 0; i < romanNumeral.length(); i++) {
