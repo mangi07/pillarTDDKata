@@ -38,4 +38,16 @@ public class ArabicTest {
         int number = arabic.fromRomanNumeral("V");
         assertEquals(5, number);
     }
+
+    @Test
+    public void whenPassedVIIReturns7() {
+        int number = arabic.fromRomanNumeral("VII");
+        assertEquals(7, number);
+    }
+
+    @Test
+    public void whenPassedIXReturns9() {
+        int number = arabic.fromRomanNumeral("IX");
+        assertEquals(9, number);
+    }
 }

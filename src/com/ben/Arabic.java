@@ -16,6 +16,7 @@ public class Arabic {
         Map<Character, Integer> arabicValues = new HashMap<>();
         arabicValues.put('I', 1);
         arabicValues.put('V', 5);
+        arabicValues.put('X', 10);
 
         List<Integer> values = new ArrayList<>();
         for (int i = 0; i < romanNumeral.length(); i++) {
